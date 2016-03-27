@@ -8,7 +8,7 @@
 <body>
 	<label for="api-input">请输入北京今天空气质量:</label>
 	<input type="text" id="api-input">
-	<botton id="button">确认填写</botton>
+	<button id="button">确认填写</button>
 	<p>您输入的值是：<span id="api-display">尚无录入</span></p>
 </body>
 <script>
@@ -17,7 +17,9 @@
 		btn.addEventListener('click', function() {
 			var value = document.getElementById('api-input').value,
 				display = document.getElementById('api-display');
-			display.innerText = value;
+				
+			if (display.innerText) display.innerText = value;
+			else display.textContent = value;
 		})
 	})();
 </script>
